@@ -21,6 +21,16 @@ class HomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              // * TITLE
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  "Click on the buttons to navigate to the pages and check them out!",
+                  style: TextStyle(fontSize: 18),
+                ),
+              ),
+
+              // * MAP
               FilledButton.tonalIcon(
                 onPressed: () async {
                   final permission = await placeController.handleLocationPermission();
@@ -35,6 +45,15 @@ class HomePage extends StatelessWidget {
                 icon: const Icon(Icons.map),
                 label: const Text('Map'),
               ),
+
+              // * REQUEST
+              FilledButton.tonalIcon(
+                onPressed: () => Get.toNamed("/request"),
+                icon: const Icon(Icons.request_page),
+                label: const Text('Request'),
+              ),
+
+              // * STATUS
               FilledButton.tonalIcon(
                 onPressed: () => Get.toNamed("/status"),
                 icon: const Icon(Icons.timeline),

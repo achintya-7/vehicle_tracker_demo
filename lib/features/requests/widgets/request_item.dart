@@ -8,7 +8,7 @@ class RequestItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 2),
       child: InkWell(
         onTap: () => Fluttertoast.showToast(msg: "Coming Soon"),
         child: Card(

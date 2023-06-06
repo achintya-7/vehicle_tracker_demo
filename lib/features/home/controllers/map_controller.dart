@@ -46,7 +46,7 @@ class PlaceController extends GetxController {
       return LatLng(position.latitude, position.longitude);
     } on Exception catch (e) {
       log(e.toString());
-      Fluttertoast.showToast(msg: "Error getting current location, time limit exceeded\n Showing default location");
+      Fluttertoast.showToast(msg: "Error getting current location\n Showing default location");
       return newDelhi;
     }
   }

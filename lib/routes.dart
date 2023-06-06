@@ -17,10 +17,10 @@ List<GetPage<dynamic>> getPages = [
   ),
   GetPage(
     name: "/request",
-    page: () => RequestPage(),
+    page: () => const RequestPage(),
   ),
   GetPage(
     name: "/status",
-    page: () => StatusPage(),
+    page: () => const StatusPage(),
   ),
 ];
