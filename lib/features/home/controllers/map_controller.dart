@@ -5,9 +5,9 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:vehicle_tracker_demo/constants.dart';
 
 class PlaceController extends GetxController {
-
   Rx<Placemark> place = Rx<Placemark>(Placemark());
   RxBool placeLoading = false.obs;
 
@@ -39,12 +39,15 @@ class PlaceController extends GetxController {
 
   Future<LatLng?> getCurrentLocation() async {
     try {
-      Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+      Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high,
+        timeLimit: const Duration(seconds: 5),
+      );
       return LatLng(position.latitude, position.longitude);
     } on Exception catch (e) {
       log(e.toString());
-      Fluttertoast.showToast(msg: "Error getting current location");
-      return null;
+      Fluttertoast.showToast(msg: "Error getting current location, time limit exceeded\n Showing default location");
+      return newDelhi;
     }
   }
 

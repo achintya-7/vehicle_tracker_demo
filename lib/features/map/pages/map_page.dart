@@ -19,6 +19,9 @@ class MapPage extends StatelessWidget {
     placeController.getPlaceDetails(position);
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          title: const Text("Open Street Map Preview"),
+        ),
         body: FlutterMap(
           options: MapOptions(
             center: position,
