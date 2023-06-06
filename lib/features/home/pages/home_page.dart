@@ -35,6 +35,11 @@ class HomePage extends StatelessWidget {
                 icon: const Icon(Icons.map),
                 label: const Text('Map'),
               ),
+              FilledButton.tonalIcon(
+                onPressed: () => Get.toNamed("/status"),
+                icon: const Icon(Icons.timeline),
+                label: const Text('Status'),
+              ),
             ],
           ),
         ),
