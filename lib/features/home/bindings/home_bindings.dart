@@ -4,6 +4,6 @@ import 'package:vehicle_tracker_demo/features/home/controllers/map_controller.da
 class HomeBindings extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<MapController>(() => MapController());
+    Get.lazyPut<PlaceController>(() => PlaceController());
   }
 }

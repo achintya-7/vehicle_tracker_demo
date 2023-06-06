@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 
 import '../controllers/map_controller.dart';
@@ -6,7 +9,7 @@ import '../controllers/map_controller.dart';
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 
-  final mapController = Get.find<MapController>();
+  final placeController = Get.find<PlaceController>();
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +24,13 @@ class HomePage extends StatelessWidget {
                   backgroundColor: Colors.orange,
                 ),
                 onPressed: () async {
-                  bool permission = await mapController.handleLocationPermission();
+                  final permission = await placeController.handleLocationPermission();
                   if (permission) {
-                    Get.toNamed("/map");
+                    log("Permission granted");
+                    final position = await placeController.getCurrentLocation();
+                    if (position != null) {
+                      Get.toNamed("/map", arguments: {"position": position});
+                    }
                   }
                 },
                 icon: const Icon(Icons.map),
