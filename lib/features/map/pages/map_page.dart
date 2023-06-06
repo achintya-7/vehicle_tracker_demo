@@ -26,6 +26,7 @@ class MapPage extends StatelessWidget {
           ),
           nonRotatedChildren: [
             PlaceDetails(position: position, placeController: placeController),
+            ConfirmButton(placeController: placeController)
           ],
           children: [
             TileLayer(

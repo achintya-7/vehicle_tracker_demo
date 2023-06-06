@@ -15,8 +15,19 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.orangeAccent),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),
         scaffoldBackgroundColor: Colors.grey[350],
+        filledButtonTheme: FilledButtonThemeData(
+          style: FilledButton.styleFrom(backgroundColor: Colors.orange),
+        ),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.cyan[900],
+          foregroundColor: Colors.white,
+          centerTitle: true,
+        ),
+        dividerTheme: DividerThemeData(
+          color: Colors.grey[700],
+        ),
         useMaterial3: true,
       ),
       getPages: getPages,
@@ -24,4 +35,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

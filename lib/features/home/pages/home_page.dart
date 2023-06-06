@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 
 import '../controllers/map_controller.dart';
@@ -19,10 +18,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              FilledButton.icon(
-                style: FilledButton.styleFrom(
-                  backgroundColor: Colors.orange,
-                ),
+              FilledButton.tonalIcon(
                 onPressed: () async {
                   final permission = await placeController.handleLocationPermission();
                   if (permission) {
