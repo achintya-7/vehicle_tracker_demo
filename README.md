@@ -1,6 +1,7 @@
 # vehicle_tracker_demo
-Uses OpenStreetMap and Flutter_Map for implementation of maps
-GetX for state management
+* Uses OpenStreetMap and Flutter_Map for implementation of maps
+* GetX for state management
+* http for networking
 
 ## APK
 You can check out the apk in Releases
