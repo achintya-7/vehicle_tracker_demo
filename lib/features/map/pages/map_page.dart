@@ -25,7 +25,9 @@ class MapPage extends StatelessWidget {
         body: FlutterMap(
           options: MapOptions(
             center: position,
-            zoom: 13.0,
+            zoom: 13,
+            maxZoom: 18,
+            minZoom: 1,
           ),
           nonRotatedChildren: [
             PlaceDetails(position: position, placeController: placeController),
